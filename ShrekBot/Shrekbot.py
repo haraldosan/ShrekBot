@@ -21,7 +21,6 @@ try:
 
     print("user ID: {}".format(user.uid))
     print("user's name: {}".format(user.name))
-    print("user's photo: {}".format(user.photo))
     print("Is user client's friend: {}".format(user.is_friend))
     print(type(user.is_friend))
 
@@ -42,9 +41,13 @@ try:
     for i in range(25):
         client.send(
             Message(text=moviescript[i]), thread_id=user.uid, thread_type=ThreadType.USER)
+        print("Message sent: ", moviescript[i])
         time.sleep(3)
-
+    
+    print("Thank you for using ShrekBot")
+    time.sleep(10)
     client.logout()
+    sys.exit()
 
 except:
     sys.exit()
